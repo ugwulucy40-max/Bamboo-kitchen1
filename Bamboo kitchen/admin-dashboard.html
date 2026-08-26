@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Admin Dashboard | Bamboo Kitchen</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+    <header class="admin-header">
+
+        <div class="container admin-header-inner">
+
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Bamboo Kitchen Logo">
+            </a>
+
+            <div class="admin-header-right">
+                <span id="adminEmail" class="admin-email"></span>
+                <button id="logoutBtn" class="btn btn-secondary">Log Out</button>
+            </div>
+
+        </div>
+
+    </header>
+
+    <section class="admin-dashboard">
+
+        <div class="container">
+
+            <div class="admin-tabs">
+                <button class="admin-tab-btn active" data-tab="orders">Orders</button>
+                <button class="admin-tab-btn" data-tab="menu">Menu</button>
+                <button class="admin-tab-btn" data-tab="sales">Sales Report</button>
+                <button class="admin-tab-btn" data-tab="customers">Customers</button>
+            </div>
+
+            <!-- ==========================================
+                 ORDERS TAB
+            =========================================== -->
+
+            <div id="tab-orders" class="admin-tab-panel active">
+
+                <div class="admin-dashboard-heading">
+                    <h1>Orders</h1>
+                    <button id="refreshOrdersBtn" class="btn btn-secondary">
+                        <i class="fa-solid fa-rotate"></i> Refresh
+                    </button>
+                </div>
+
+                <div id="ordersLoading" class="admin-status-msg">
+                    Loading orders...
+                </div>
+
+                <div id="ordersError" class="admin-status-msg admin-status-error" style="display:none;">
+                    Couldn't load orders. Check your connection and try refreshing.
+                </div>
+
+                <div id="ordersEmpty" class="admin-status-msg" style="display:none;">
+                    No orders yet.
+                </div>
+
+                <div class="orders-table-wrap">
+
+                    <table id="ordersTable" class="orders-table" style="display:none;">
+
+                        <thead>
+                            <tr>
+                                <th>Order</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Placed</th>
+                                <th>Status</th>
+                                <th>Receipt</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="ordersTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+                 MENU TAB
+            =========================================== -->
+
+            <div id="tab-menu" class="admin-tab-panel">
+
+                <div class="admin-dashboard-heading">
+                    <h1>Menu</h1>
+                    <button id="refreshMenuBtn" class="btn btn-secondary">
+                        <i class="fa-solid fa-rotate"></i> Refresh
+                    </button>
+                </div>
+
+                <div class="admin-panel-card admin-add-item-card">
+
+                    <h2>Add New Item</h2>
+
+                    <form id="addProductForm" class="admin-inline-form">
+
+                        <input type="text" id="newProductName" placeholder="Name" required>
+                        <input type="number" id="newProductPrice" placeholder="Price (\u20a6)" min="0" step="1" required>
+
+                        <select id="newProductCategory" required>
+                            <option value="rice">Rice</option>
+                            <option value="soups">Soups</option>
+                            <option value="grill">Grills</option>
+                            <option value="combos">Combos</option>
+                        </select>
+
+                        <input type="text" id="newProductImage" placeholder="Image path, e.g. images/item.jpg">
+                        <input type="text" id="newProductDescription" placeholder="Short description">
+
+                        <button type="submit" class="btn btn-primary">Add Item</button>
+
+                    </form>
+
+                </div>
+
+                <div id="menuLoadingAdmin" class="admin-status-msg">
+                    Loading menu...
+                </div>
+
+                <div id="menuErrorAdmin" class="admin-status-msg admin-status-error" style="display:none;">
+                    Couldn't load the menu. Check your connection and try refreshing.
+                </div>
+
+                <div class="orders-table-wrap">
+
+                    <table id="productsTable" class="orders-table" style="display:none;">
+
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Available</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="productsTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+                 SALES REPORT TAB
+            =========================================== -->
+
+            <div id="tab-sales" class="admin-tab-panel">
+
+                <div class="admin-dashboard-heading">
+                    <h1>Sales Report</h1>
+                    <button id="refreshSalesBtn" class="btn btn-secondary">
+                        <i class="fa-solid fa-rotate"></i> Refresh
+                    </button>
+                </div>
+
+                <div id="salesLoading" class="admin-status-msg">
+                    Loading sales...
+                </div>
+
+                <div id="salesError" class="admin-status-msg admin-status-error" style="display:none;">
+                    Couldn't load sales data. Check your connection and try refreshing.
+                </div>
+
+                <div id="salesContent" class="sales-cards" style="display:none;">
+
+                    <div class="admin-panel-card sales-card">
+                        <span class="sales-card-label">Today</span>
+                        <span class="sales-card-amount" id="salesTodayAmount">\u20a60</span>
+                        <span class="sales-card-meta" id="salesTodayCount">0 orders</span>
+                    </div>
+
+                    <div class="admin-panel-card sales-card">
+                        <span class="sales-card-label">This Week</span>
+                        <span class="sales-card-amount" id="salesWeekAmount">\u20a60</span>
+                        <span class="sales-card-meta" id="salesWeekCount">0 orders</span>
+                    </div>
+
+                </div>
+
+                <p class="admin-fineprint">
+                    Cancelled orders are not counted toward these totals.
+                </p>
+
+            </div>
+
+            <!-- ==========================================
+                 CUSTOMERS TAB
+            =========================================== -->
+
+            <div id="tab-customers" class="admin-tab-panel">
+
+                <div class="admin-dashboard-heading">
+                    <h1>Customers</h1>
+                    <button id="refreshCustomersBtn" class="btn btn-secondary">
+                        <i class="fa-solid fa-rotate"></i> Refresh
+                    </button>
+                </div>
+
+                <div id="customersLoading" class="admin-status-msg">
+                    Loading customers...
+                </div>
+
+                <div id="customersError" class="admin-status-msg admin-status-error" style="display:none;">
+                    Couldn't load customers. Check your connection and try refreshing.
+                </div>
+
+                <div id="customersEmpty" class="admin-status-msg" style="display:none;">
+                    No customers yet.
+                </div>
+
+                <div class="orders-table-wrap">
+
+                    <table id="customersTable" class="orders-table" style="display:none;">
+
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Orders</th>
+                                <th>Total Spent</th>
+                                <th>Last Order</th>
+                                <th>WhatsApp</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="customersTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         RECEIPT MODAL
+    =========================================== -->
+
+    <div id="receiptModal" class="modal">
+
+        <div class="modal-content receipt-content">
+
+            <div id="receiptPrintArea">
+
+                <h2>Bamboo Kitchen</h2>
+                <p class="receipt-subheading">Order Receipt</p>
+
+                <div id="receiptBody"></div>
+
+            </div>
+
+            <div class="receipt-actions">
+                <button id="printReceiptBtn" class="btn btn-secondary">Print</button>
+                <button id="closeReceiptBtn" class="btn btn-primary">Close</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+
+    <script src="js/admin-dashboard.js"></script>
+
+</body>
+</html>

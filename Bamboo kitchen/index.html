@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ==========================================
+         Bamboo Kitchen - Restaurant Ordering Website
+         File: index.html
+         Author: ChatGPT
+         ========================================== -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bamboo Kitchen | Fresh Meals Delivered Fast</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ==========================================
+                    SPLASH SCREEN
+    =========================================== -->
+
+    <div id="splashScreen" class="splash-screen">
+
+        <img src="images/logo.png" alt="Bamboo Kitchen" class="splash-logo">
+
+        <div class="splash-spinner"></div>
+
+    </div>
+
+    <script>
+        (function () {
+
+            var splash = document.getElementById("splashScreen");
+
+            if (!splash) return;
+
+            // Don't show it again on repeat visits within the
+            // same browser tab/session — just once is enough.
+            if (sessionStorage.getItem("bkSplashShown")) {
+                splash.style.display = "none";
+                return;
+            }
+
+            var minDisplayTime = 1000;
+            var startedAt = Date.now();
+
+            function hideSplash() {
+
+                var elapsed = Date.now() - startedAt;
+                var remaining = Math.max(0, minDisplayTime - elapsed);
+
+                setTimeout(function () {
+
+                    splash.classList.add("splash-hide");
+                    sessionStorage.setItem("bkSplashShown", "true");
+
+                    setTimeout(function () {
+                        splash.remove();
+                    }, 500);
+
+                }, remaining);
+
+            }
+
+            if (document.readyState === "complete") {
+                hideSplash();
+            } else {
+                window.addEventListener("load", hideSplash);
+            }
+
+        })();
+    </script>
+
+    <!-- ==========================================
+                    HEADER
+    =========================================== -->
+
+    <header class="header">
+
+        <div class="container">
+
+            <nav class="navbar">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Bamboo Kitchen Logo">
+    </a>
+
+    <!-- Hamburger Button -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Navigation -->
+    <div class="nav-menu" id="navMenu">
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#specials">Specials</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a href="cart.html" class="cart-link">
+            🛒 Cart <span id="cart-count">0</span>
+
+
+        </a>
+
+    </div>
+
+    </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ==========================================
+                    HERO SECTION
+    =========================================== -->
+
+    <section id="home" class="hero">
+
+        <div class="container hero-container">
+
+            <!-- Hero Text -->
+
+            <div class="hero-content">
+
+                <span class="hero-tag">
+                    Fresh • Delicious • Delivered
+                </span>
+
+                <h1>
+                    Delicious Meals Prepared With Fresh Ingredients Every Day
+                </h1>
+
+                <p>
+                    Welcome to <strong>Bamboo Kitchen</strong>, where every meal is
+                    prepared with care and served with quality. Browse our menu,
+                    discover today's specials, and enjoy restaurant-quality food
+                    delivered straight to your doorstep.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#menu" class="btn btn-primary">
+                        Order Food
+                    </a>
+
+                    <a href="#menu" class="btn btn-secondary">
+                        View Menu
+                    </a>
+
+                </div>
+
+                <!-- Quick Statistics -->
+
+                <div class="hero-stats">
+
+                    <div class="stat-card">
+
+                        <h3>100+</h3>
+
+                        <p>
+                            Daily Orders
+                        </p>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <h3>30+</h3>
+
+                        <p>
+                            Delicious Meals
+                        </p>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <h3>4.9★</h3>
+
+                        <p>
+                            Customer Rating
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Hero Image -->
+
+            <div class="hero-image">
+
+                <img
+                    src="images/hero-food.jpg"
+                    alt="A selection of delicious meals from Bamboo Kitchen">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         PART 2 STARTS BELOW THIS SECTION
+         (Why Choose Bamboo Kitchen)
+    =========================================== -->
+
+    <!-- ==========================================
+            WHY CHOOSE BAMBOO KITCHEN
+    =========================================== -->
+
+    <section id="about" class="features">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+                    Why Choose Us
+                </span>
+
+                <h2>
+                    Experience the Bamboo Kitchen Difference
+                </h2>
+
+                <p>
+                    We are committed to serving delicious meals prepared with
+                    fresh ingredients, exceptional hygiene, and fast delivery
+                    to give every customer a memorable dining experience.
+                </p>
+
+            </div>
+
+            <div class="features-grid">
+
+                <!-- Feature 1 -->
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🌿
+                    </div>
+
+                    <h3>
+                        Fresh Ingredients
+                    </h3>
+
+                    <p>
+                        Every meal is prepared using carefully selected fresh
+                        vegetables, spices, meats, and locally sourced ingredients.
+                    </p>
+
+                </article>
+
+                <!-- Feature 2 -->
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🚚
+                    </div>
+
+                    <h3>
+                        Fast Delivery
+                    </h3>
+
+                    <p>
+                        Your meals are delivered quickly while still hot and fresh,
+                        ensuring the best dining experience every time.
+                    </p>
+
+                </article>
+
+                <!-- Feature 3 -->
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        💰
+                    </div>
+
+                    <h3>
+                        Affordable Prices
+                    </h3>
+
+                    <p>
+                        Enjoy premium-quality meals at prices designed to suit
+                        individuals, families, and businesses.
+                    </p>
+
+                </article>
+
+                <!-- Feature 4 -->
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🥗
+                    </div>
+
+                    <h3>
+                        Hygienic Cooking
+                    </h3>
+
+                    <p>
+                        Our kitchen follows strict hygiene standards to ensure
+                        every meal is clean, safe, and delicious.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+                POPULAR MENU
+    =========================================== -->
+
+    <section id="menu" class="menu">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+                    Popular Meals
+                </span>
+
+                <h2>
+                    Customer Favorites
+                </h2>
+
+                <p>
+                    Discover some of our most loved dishes prepared fresh every day.
+                </p>
+
+            </div>
+
+            <div class="menu-grid">
+
+                <!-- Meal 1 -->
+
+                <article class="menu-card">
+
+                    <img src="images/jollof.jpg"
+                         alt="Plate of Jollof Rice">
+
+                    <div class="menu-content">
+
+                        <h3>Jollof Rice</h3>
+
+                        <p>
+                            Rich tomato rice served with grilled chicken and salad.
+                        </p>
+
+                        <div class="menu-footer">
+
+                            <span class="price">₦4,500</span>
+
+                            <a href="#" class="btn btn-primary order-btn" data-product-id="1">
+                                Order
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- Meal 2 -->
+
+                <article class="menu-card">
+
+                    <img src="images/fried-rice.jpg"
+                         alt="Plate of Fried Rice">
+
+                    <div class="menu-content">
+
+                        <h3>Fried Rice</h3>
+
+                        <p>
+                            Flavorful fried rice served with chicken and vegetables.
+                        </p>
+
+                        <div class="menu-footer">
+
+                            <span class="price">₦4,800</span>
+
+                            <a href="#" class="btn btn-primary order-btn" data-product-id="2">
+                                Order
+                            </a>
+                                
+                            
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- Meal 3 -->
+
+                <article class="menu-card">
+
+                    <img src="images/egusi.jpg"
+                         alt="Bowl of Egusi Soup">
+
+                    <div class="menu-content">
+
+                        <h3>Egusi Soup</h3>
+
+                        <p>
+                            Traditional melon seed soup served with pounded yam.
+                        </p>
+
+                        <div class="menu-footer">
+
+                            <span class="price">₦5,200</span>
+
+                            <a href="#" class="btn btn-primary order-btn" data-product-id="3">
+                                Order
+                            </a>
+                                
+                            
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- Meal 4 -->
+
+                <article class="menu-card">
+
+                    <img src="images/pepper-soup.jpg"
+                         alt="Pepper Soup">
+
+                    <div class="menu-content">
+
+                        <h3>Pepper Soup</h3>
+
+                        <p>
+                            Hot and spicy pepper soup made with fresh goat meat.
+                        </p>
+
+                        <div class="menu-footer">
+
+                            <span class="price">₦3,800</span>
+
+                            <a href="#" class="btn btn-primary order-btn" data-product-id="4">
+                                Order
+                            </a>
+                                
+                            
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- Meal 5 -->
+
+                <article class="menu-card">
+
+                    <img src="images/chicken-chips.jpg"
+                         alt="Chicken and Chips">
+
+                    <div class="menu-content">
+
+                        <h3>Chicken & Chips</h3>
+
+                        <p>
+                            Crispy fried chicken served with golden potato chips.
+                        </p>
+
+                        <div class="menu-footer">
+
+                            <span class="price">₦5,000</span>
+
+                            <a href="#" class="btn btn-primary order-btn" data-product-id="5">
+                                Order
+                            </a>
+                                
+                            
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- Meal 6 -->
+
+                <article class="menu-card">
+
+                    <img src="images/grilled-fish.jpg"
+                         alt="Grilled Fish">
+
+                    <div class="menu-content">
+
+                        <h3>Grilled Fish</h3>
+
+                        <p>
+                            Freshly grilled fish served with plantain and vegetables.
+                        </p>
+
+                        <div class="menu-footer">
+
+                            <span class="price">₦6,500</span>
+
+                            <a href="#" class="btn btn-primary order-btn" data-product-id="6">
+                                Order
+                            </a>
+                                
+                            
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+                DAILY SPECIALS
+    =========================================== -->
+
+    <section id="specials" class="specials">
+
+        <div class="container">
+
+            <div class="specials-content">
+
+                <span class="section-tag">
+                    Today's Special
+                </span>
+
+                <h2>
+                    Enjoy Our Chef's Special Combo
+                </h2>
+
+                <p>
+                    Order a delicious plate of Jollof Rice with grilled chicken,
+                    fried plantain, salad, and a refreshing drink at a special
+                    discounted price today.
+                </p>
+
+                <a href="#menu" class="btn btn-primary">
+                    View Special Offer
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         PART 3 STARTS BELOW THIS SECTION
+         (How Ordering Works)
+    =========================================== -->
+
+    <!-- ==========================================
+            HOW ORDERING WORKS
+    =========================================== -->
+
+    <section class="how-it-works">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+                    Simple Ordering
+                </span>
+
+                <h2>
+                    Order Your Favorite Meal in Three Easy Steps
+                </h2>
+
+                <p>
+                    We've made ordering your favorite meals quick, simple, and
+                    convenient.
+                </p>
+
+            </div>
+
+            <div class="steps-grid">
+
+                <!-- Step 1 -->
+
+                <article class="step-card">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <div class="step-icon">
+                        🍽️
+                    </div>
+
+                    <h3>
+                        Browse the Menu
+                    </h3>
+
+                    <p>
+                        Explore our delicious collection of freshly prepared meals
+                        and choose your favorites.
+                    </p>
+
+                </article>
+
+                <!-- Step 2 -->
+
+                <article class="step-card">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <div class="step-icon">
+                        🛒
+                    </div>
+
+                    <h3>
+                        Place Your Order
+                    </h3>
+
+                    <p>
+                        Select your preferred meals and place your order in just a
+                        few simple steps.
+                    </p>
+
+                </article>
+
+                <!-- Step 3 -->
+
+                <article class="step-card">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <div class="step-icon">
+                        🚚
+                    </div>
+
+                    <h3>
+                        Enjoy Fast Delivery
+                    </h3>
+
+                    <p>
+                        Sit back and relax while we prepare your meal and deliver
+                        it fresh to your doorstep.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+            CUSTOMER TESTIMONIALS
+    =========================================== -->
+
+    <section class="testimonials">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-tag">
+                    Testimonials
+                </span>
+
+                <h2>
+                    What Our Customers Say
+                </h2>
+
+                <p>
+                    Thousands of happy customers trust Bamboo Kitchen for fresh,
+                    delicious meals every day.
+                </p>
+
+            </div>
+
+            <div class="testimonial-grid">
+
+                <!-- Testimonial 1 -->
+
+                <article class="testimonial-card">
+
+                    <img src="images/customer1.jpg"
+                         alt="Portrait of customer Grace">
+
+                    <h3>
+                        Grace Johnson
+                    </h3>
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "The Jollof Rice was amazing! Delivery was fast and the
+                        food arrived hot. Highly recommended."
+                    </p>
+
+                </article>
+
+                <!-- Testimonial 2 -->
+
+                <article class="testimonial-card">
+
+                    <img src="images/customer2.jpg"
+                         alt="Portrait of customer Michael">
+
+                    <h3>
+                        Michel Adams
+                    </h3>
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "Excellent customer service and very affordable prices.
+                        Bamboo Kitchen has become my favorite restaurant."
+                    </p>
+
+                </article>
+
+                <!-- Testimonial 3 -->
+
+                <article class="testimonial-card">
+
+                    <img src="images/customer3.jpg"
+                         alt="Portrait of customer Sarah">
+
+                    <h3>
+                        Sarah Williams
+                    </h3>
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        "Fresh ingredients, delicious meals, and quick delivery.
+                        Every order has exceeded my expectations."
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+            CALL TO ACTION
+    =========================================== -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <div class="cta-content">
+
+                <h2>
+                    Ready to Enjoy a Delicious Meal?
+                </h2>
+
+                <p>
+                    Order today and experience fresh ingredients, exceptional
+                    taste, and fast delivery from Bamboo Kitchen.
+                </p>
+
+                <a href="#menu" class="btn btn-primary">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+                    FOOTER
+    =========================================== -->
+
+    <footer id="contact" class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <!-- About -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Bamboo Kitchen
+                    </h3>
+
+                    <p>
+                        Bamboo Kitchen is committed to serving fresh,
+                        delicious meals prepared with quality ingredients
+                        and delivered with exceptional customer service.
+                    </p>
+
+                </div>
+
+                <!-- Quick Links -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <ul>
+
+                        <li><a href="#home">Home</a></li>
+
+                        <li><a href="#menu">Menu</a></li>
+
+                        <li><a href="#specials">Specials</a></li>
+
+                        <li><a href="#about">About</a></li>
+
+                        <li><a href="#contact">Contact</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Contact -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Contact
+                    </h3>
+
+                    <p>
+                        📞 +234 808 499 5639
+                    </p>
+
+                    <p>
+                        ✉️ hello@bambookitchen.com
+                    </p>
+
+                    <p>
+                        📍 T-Junction Nike Lake Road, Enugu State, Nigeria
+                    </p>
+
+                </div>
+
+                <!-- Opening Hours -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Opening Hours
+                    </h3>
+
+                    <p>Monday – Friday: 8:00 AM – 9:00 PM</p>
+
+                    <p>Saturday: 9:00 AM – 10:00 PM</p>
+
+                    <p>Sunday: 10:00 AM – 8:00 PM</p>
+
+                </div>
+
+            </div>
+
+            <!-- Social Media -->
+
+            <div class="footer-social">
+
+                <a href="#" aria-label="Facebook">
+                    Facebook
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    Instagram
+                </a>
+
+                <a href="#" aria-label="X (Twitter)">
+                    X (Twitter)
+                </a>
+
+            </div>
+
+            <!-- Copyright -->
+
+            <div class="footer-bottom">
+
+                <p>
+                    &copy; 2026 Bamboo Kitchen. All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+<!-- Supabase CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase-config.js"></script>
+
+<script>
+    // testConnection()
+</script>
+
+<script src="js/products.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/navigation.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

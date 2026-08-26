@@ -1,0 +1,431 @@
+/* ===========================================
+   Bamboo Kitchen
+   Track Order Page Styles
+=========================================== */
+
+/* ===== RESET ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8f8f8;
+    color:#222;
+    line-height:1.6;
+}
+
+/* ===== NAVIGATION ===== */
+
+.navbar{
+    background:#111;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+
+.logo h2{
+    color:#FFD700;
+    font-size:28px;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+    color:#FFD700;
+}
+
+/* ===== HERO ===== */
+
+.page-banner{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.page-banner h1{
+    font-size:42px;
+    margin-bottom:15px;
+    color:#FFD700;
+}
+
+.page-banner p{
+    font-size:18px;
+    max-width:700px;
+    margin:auto;
+}
+
+/* ===== TRACK CARD ===== */
+
+.track-order{
+    padding:70px 8%;
+    display:flex;
+    justify-content:center;
+}
+
+.track-card{
+    width:100%;
+    max-width:700px;
+    background:#fff;
+    border-radius:15px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.track-card h2{
+    margin-bottom:15px;
+}
+
+.track-card p{
+    color:#666;
+    margin-bottom:30px;
+}
+
+.track-form{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.track-form input{
+    flex:1;
+    min-width:250px;
+    padding:15px;
+    border:2px solid #ddd;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.track-form input:focus{
+    outline:none;
+    border-color:#FFD700;
+}
+
+/* ===== BUTTON ===== */
+
+.btn-primary{
+    background:#FFD700;
+    color:#111;
+    border:none;
+    padding:15px 30px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    background:#111;
+    color:#FFD700;
+}
+
+/* ===== RESULT ===== */
+
+.tracking-result{
+    padding:20px 8%;
+}
+
+.result-card{
+    background:#fff;
+    border-radius:15px;
+    padding:40px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.result-card h2{
+    margin-bottom:20px;
+}
+
+.result-card h3{
+    color:#FFD700;
+    margin-bottom:15px;
+}
+
+.result-card h1{
+    color:#28a745;
+    font-size:40px;
+    margin-top:10px;
+}
+
+/* ===== TIMELINE ===== */
+
+.progress-section{
+    padding:60px 8%;
+}
+
+.progress-section h2{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.timeline{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.step{
+    text-align:center;
+    flex:1;
+    min-width:120px;
+}
+
+.circle{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#ddd;
+    color:#555;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    margin:auto;
+    transition:.4s;
+}
+
+.step p{
+    margin-top:12px;
+    font-size:14px;
+}
+
+.step.active .circle{
+    background:#FFD700;
+    color:#111;
+}
+
+.line{
+    height:4px;
+    background:#ddd;
+    flex:1;
+    min-width:30px;
+}
+
+/* ===== HELP ===== */
+
+.help-section{
+    padding:70px 8%;
+}
+
+.help-card{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:50px;
+    border-radius:15px;
+}
+
+.help-card i{
+    font-size:50px;
+    color:#FFD700;
+    margin-bottom:20px;
+}
+
+.help-card h2{
+    margin-bottom:15px;
+}
+
+.help-card p{
+    margin-bottom:20px;
+}
+
+.help-card h3{
+    color:#FFD700;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:992px){
+
+.timeline{
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+.line{
+
+    width:4px;
+    height:50px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+
+    flex-direction:column;
+    gap:20px;
+
+}
+
+.nav-links{
+
+    flex-direction:column;
+    text-align:center;
+
+}
+
+.track-form{
+
+    flex-direction:column;
+
+}
+
+.track-form input,
+.btn-primary{
+
+    width:100%;
+
+}
+
+.page-banner h1{
+
+    font-size:32px;
+
+}
+
+.result-card h1{
+
+    font-size:30px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.logo h2{
+
+    font-size:22px;
+
+}
+
+.logo img{
+
+    width:45px;
+    height:45px;
+
+}
+
+.page-banner{
+
+    padding:50px 15px;
+
+}
+
+.track-card,
+.result-card,
+.help-card{
+
+    padding:25px;
+
+}
+
+}
+/* ===== PHONE LOOKUP RESULTS ===== */
+
+.track-order{
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+}
+
+.phone-results{
+    margin-top:25px;
+    text-align:left;
+}
+
+.phone-result-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    background:#f8f8f8;
+    border-radius:10px;
+    padding:16px 18px;
+    margin-bottom:12px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.phone-result-item:hover{
+    background:#fdf6d8;
+}
+
+.phone-result-code{
+    font-weight:700;
+    color:#111;
+}
+
+.phone-result-meta{
+    font-size:13px;
+    color:#666;
+}
+
+.phone-result-status{
+    background:#FFD700;
+    color:#111;
+    font-weight:600;
+    font-size:13px;
+    padding:6px 12px;
+    border-radius:20px;
+}
+
+.phone-results-empty,
+.phone-results-error{
+    color:#666;
+    font-size:14px;
+    margin-top:15px;
+}

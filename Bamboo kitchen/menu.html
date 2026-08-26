@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bamboo Kitchen | Full Menu</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ==========================================
+                HEADER
+=========================================== -->
+
+<header class="header">
+
+    <div class="container">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Bamboo Kitchen Logo">
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open Navigation">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+
+                <ul class="nav-links">
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="menu.html" class="active">Menu</a></li>
+
+                    <li><a href="index.html#specials">Specials</a></li>
+
+                    <li><a href="index.html#about">About</a></li>
+
+                    <li><a href="index.html#contact">Contact</a></li>
+
+                </ul>
+
+                <a href="cart.html" class="cart-link">
+
+                    🛒 Cart
+
+                    <span id="cart-count">0</span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- ==========================================
+                PAGE HERO
+=========================================== -->
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <span class="section-tag">
+
+            Freshly Prepared Every Day
+
+        </span>
+
+        <h1>
+
+            Our Complete Menu
+
+        </h1>
+
+        <p>
+
+            Browse our delicious collection of freshly prepared meals.
+            Every order is cooked with quality ingredients and delivered
+            hot to your doorstep.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                SEARCH BAR
+=========================================== -->
+
+<section class="menu-search">
+
+    <div class="container">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search meals...">
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                MENU CATEGORIES
+=========================================== -->
+
+<section class="menu-categories">
+
+    <div class="container">
+
+        <div class="category-buttons">
+
+            <button class="category-btn active"
+                    data-category="all">
+
+                All Meals
+
+            </button>
+
+            <button class="category-btn"
+                    data-category="rice">
+
+                Rice
+
+            </button>
+
+            <button class="category-btn"
+                    data-category="soups">
+
+                Soups
+
+            </button>
+
+            <button class="category-btn"
+                    data-category="grill">
+
+                Grills
+
+            </button>
+
+            <button class="category-btn"
+                    data-category="combos">
+
+                Combos
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                MENU GRID
+=========================================== -->
+
+<section class="menu-page">
+
+    <div class="container">
+
+        <div id="menuLoading" class="menu-status-msg">
+            Loading menu...
+        </div>
+
+        <div id="menuEmpty" class="menu-status-msg" style="display:none;">
+            No meals match your search right now.
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+        </div>
+
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+        CALL TO ACTION
+========================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-content">
+
+            <h2>
+
+                Hungry?
+
+            </h2>
+
+            <p>
+
+                Add your favourite meals to your cart and enjoy fast delivery from Bamboo Kitchen.
+
+            </p>
+
+            <a href="cart.html" class="btn btn-primary">
+
+                View Cart
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+                FOOTER
+========================================== -->
+
+<footer class="footer" id="contact">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- About -->
+
+            <div class="footer-column">
+
+                <h3>Bamboo Kitchen</h3>
+
+                <p>
+                    Freshly prepared meals made with quality ingredients and
+                    delivered with excellent customer service throughout Nigeria.
+                </p>
+
+            </div>
+
+            <!-- Quick Links -->
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+
+                    <li><a href="menu.html">Menu</a></li>
+
+                    <li><a href="cart.html">Cart</a></li>
+
+                    <li><a href="checkout.html">Checkout</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>📞 +234 800 123 4567</p>
+
+                <p>✉ hello@bambookitchen.com</p>
+
+                <p>📍 15 Bamboo Avenue, Enugu, Nigeria</p>
+
+            </div>
+
+            <!-- Opening Hours -->
+
+            <div class="footer-column">
+
+                <h3>Opening Hours</h3>
+
+                <p>Monday - Friday: 8:00 AM - 9:00 PM</p>
+
+                <p>Saturday: 9:00 AM - 10:00 PM</p>
+
+                <p>Sunday: 10:00 AM - 8:00 PM</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-social">
+
+            <a href="#">Facebook</a>
+
+            <a href="#">Instagram</a>
+
+            <a href="#">X (Twitter)</a>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+
+                &copy; 2026 Bamboo Kitchen. All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- ==========================================
+                JAVASCRIPT
+========================================== -->
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase-config.js"></script>
+
+<!-- Shopping Cart -->
+<script src="js/storage.js"></script>
+<script src="js/menu.js"></script>
+
+<!-- Navigation -->
+<script src="js/navigation.js"></script>
+
+</body>
+</html>

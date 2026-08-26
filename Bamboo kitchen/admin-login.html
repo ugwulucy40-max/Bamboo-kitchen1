@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Admin Login | Bamboo Kitchen</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+    <section class="admin-auth-page">
+
+        <div class="admin-auth-card">
+
+            <a href="index.html" class="admin-auth-logo">
+                <img src="images/logo.png" alt="Bamboo Kitchen Logo">
+            </a>
+
+            <h1>Admin Login</h1>
+            <p>Sign in to view and manage orders.</p>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="you@bambookitchen.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+
+                <div id="loginError" class="admin-auth-error" style="display:none;"></div>
+
+                <button type="submit" class="btn btn-primary" id="loginBtn">
+                    Log In
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+
+    <script src="js/admin-login.js"></script>
+
+</body>
+</html>

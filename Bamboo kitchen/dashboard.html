@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bamboo Kitchen | Dashboard</title>
+
+<link rel="stylesheet" href="dashboard.css">
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <img src="images/logo.png" alt="Bamboo Kitchen">
+
+            <h2>Bamboo Kitchen</h2>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
+
+            <li>
+                <i class="fa-solid fa-utensils"></i>
+                Menu
+            </li>
+
+            <li>
+                <i class="fa-solid fa-cart-shopping"></i>
+                Orders
+            </li>
+
+            <li>
+                <i class="fa-solid fa-users"></i>
+                Customers
+            </li>
+
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                Reports
+            </li>
+
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <h1>Dashboard</h1>
+
+            <div class="admin">
+
+                <i class="fa-solid fa-user-circle"></i>
+
+                <span>Administrator</span>
+
+            </div>
+
+        </header>
+
+        <!-- Cards -->
+
+        <section class="cards">
+
+            <div class="card">
+
+                <h3>Total Products</h3>
+
+                <h2>15</h2>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Total Orders</h3>
+
+                <h2>124</h2>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Revenue Today</h3>
+
+                <h2>₦184,500</h2>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Pending Orders</h3>
+
+                <h2>8</h2>
+
+            </div>
+
+        </section>
+
+        <!-- Orders -->
+
+        <section class="orders">
+
+            <h2>Recent Orders</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Order ID</th>
+
+                        <th>Customer</th>
+
+                        <th>Meal</th>
+
+                        <th>Total</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>#1001</td>
+
+                        <td>John</td>
+
+                        <td>Jollof Rice</td>
+
+                        <td>₦6,500</td>
+
+                        <td><span class="completed">Completed</span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>#1002</td>
+
+                        <td>Mary</td>
+
+                        <td>Fried Rice</td>
+
+                        <td>₦7,200</td>
+
+                        <td><span class="pending">Pending</span></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>#1003</td>
+
+                        <td>David</td>
+
+                        <td>Pepper Soup</td>
+
+                        <td>₦5,500</td>
+
+                        <td><span class="processing">Preparing</span></td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- Popular Meals -->
+
+        <section class="popular">
+
+            <h2>Popular Meals</h2>
+
+            <div class="meal-grid">
+
+                <div class="meal-card">
+
+                    <img src="images/jollof-rice.jpg" alt="">
+
+                    <h4>Jollof Rice</h4>
+
+                    <p>120 Orders</p>
+
+                </div>
+
+                <div class="meal-card">
+
+                    <img src="images/fried-rice.jpg" alt="">
+
+                    <h4>Fried Rice</h4>
+
+                    <p>97 Orders</p>
+
+                </div>
+
+                <div class="meal-card">
+
+                    <img src="images/egusi.jpg" alt="">
+
+                    <h4>Egusi Soup</h4>
+
+                    <p>82 Orders</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Quick Actions -->
+
+        <section class="actions">
+
+            <h2>Quick Actions</h2>
+
+            <button>Add New Meal</button>
+
+            <button>View Orders</button>
+
+            <button>Manage Customers</button>
+
+            <button>Generate Report</button>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

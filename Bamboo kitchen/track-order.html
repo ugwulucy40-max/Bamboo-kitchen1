@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Order | Bamboo Kitchen</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="track-order.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================
+         HEADER
+    =========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <img src="images/logo.png" alt="Bamboo Kitchen Logo">
+
+            <h2>Bamboo Kitchen</h2>
+
+        </div>
+
+        <nav>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="menu.html">Menu</a></li>
+
+                <li><a href="about.html">About</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+
+                <li><a href="track-order.html" class="active">Track Order</a></li>
+
+                <li><a href="cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Cart
+                </a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- ==========================
+         HERO
+    =========================== -->
+
+    <section class="page-banner">
+
+        <h1>Track Your Order</h1>
+
+        <p>
+
+            Enter your Order ID below to check the current status of your order.
+
+        </p>
+
+    </section>
+
+    <!-- ==========================
+         TRACKER
+    =========================== -->
+
+    <section class="track-order">
+
+        <div class="track-card">
+
+            <h2>Order Tracking</h2>
+
+            <p>
+
+                Your Order ID was given after checkout.
+
+            </p>
+
+            <div class="track-form">
+
+                <input
+                    type="text"
+                    id="orderId"
+                    placeholder="Example: BK123456">
+
+                <button
+                    id="trackButton"
+                    class="btn-primary">
+
+                    Track Order
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="track-card">
+
+            <h2>Lost Your Order ID?</h2>
+
+            <p>
+
+                Look up your recent orders using the phone number
+                you checked out with.
+
+            </p>
+
+            <div class="track-form">
+
+                <input
+                    type="tel"
+                    id="phoneInput"
+                    placeholder="Example: 08012345678">
+
+                <button
+                    id="phoneLookupButton"
+                    class="btn-primary">
+
+                    Find My Orders
+
+                </button>
+
+            </div>
+
+            <div id="phoneResults" class="phone-results"></div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         RESULT
+    =========================== -->
+
+    <section
+        id="trackingResult"
+        class="tracking-result"
+        style="display:none;">
+
+        <div class="result-card">
+
+            <h2>Order Status</h2>
+
+            <h3 id="displayOrderId">
+
+                Order ID
+
+            </h3>
+
+            <p>
+
+                Current Status
+
+            </p>
+
+            <h1 id="statusText">
+
+                Order Received
+
+            </h1>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         PROGRESS
+    =========================== -->
+
+    <section
+        id="progressSection"
+        class="progress-section"
+        style="display:none;">
+
+        <h2>Order Progress</h2>
+
+        <div class="timeline">
+
+            <div class="step active">
+
+                <div class="circle">1</div>
+
+                <p>Order Received</p>
+
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+
+                <div class="circle">2</div>
+
+                <p>Preparing Food</p>
+
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+
+                <div class="circle">3</div>
+
+                <p>Cooking</p>
+
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+
+                <div class="circle">4</div>
+
+                <p>Ready for Pickup</p>
+
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+
+                <div class="circle">5</div>
+
+                <p>Out for Delivery</p>
+
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+
+                <div class="circle">6</div>
+
+                <p>Delivered</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         HELP
+    =========================== -->
+
+    <section class="help-section">
+
+        <div class="help-card">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <h2>Need Help?</h2>
+
+            <p>
+
+                Call us if you have any issue with your order.
+
+            </p>
+
+            <h3>
+
+                +234 808 499 5639
+
+            </h3>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         FOOTER
+    =========================== -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Bamboo Kitchen.
+            All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+    <!-- ==========================
+         JAVASCRIPT
+    =========================== -->
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+
+    <script src="js/track-order.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Bamboo Kitchen</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- ==========================================
+                    HEADER
+    =========================================== -->
+
+    <header class="header">
+
+        <div class="container">
+
+            <nav class="navbar">
+
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Bamboo Kitchen Logo">
+                </a>
+
+                <!-- Hamburger Button -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <div class="nav-menu" id="navMenu">
+
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="track-order.html">Track Order</a></li>
+                    </ul>
+
+                    <a href="cart.html" class="cart-link">
+                        🛒 Cart <span id="cart-count">0</span>
+                    </a>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ==========================================
+                    PAGE BANNER
+    =========================================== -->
+
+    <section class="page-banner">
+
+        <div class="container">
+
+            <h1>Checkout</h1>
+            <p>Complete your order in a few simple steps.</p>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+                    CHECKOUT SECTION
+    =========================================== -->
+
+    <section class="checkout-section">
+
+        <div class="container checkout-container">
+
+            <!-- Customer Form -->
+
+            <div class="checkout-form">
+
+                <h2>Delivery Information</h2>
+
+                <form id="checkoutForm">
+
+                    <div class="form-group">
+                        <label for="customerName">Full Name</label>
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="Enter your full name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerPhone">Phone Number</label>
+                        <input
+                            type="tel"
+                            id="customerPhone"
+                            placeholder="08012345678"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerEmail">Email (Optional)</label>
+                        <input
+                            type="email"
+                            id="customerEmail"
+                            placeholder="example@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerAddress">Delivery Address</label>
+                        <textarea
+                            id="customerAddress"
+                            rows="4"
+                            placeholder="Enter your delivery address"
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orderNotes">Order Notes</label>
+                        <textarea
+                            id="orderNotes"
+                            rows="3"
+                            placeholder="Extra pepper, no onions, etc."></textarea>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- Order Summary -->
+
+            <div class="checkout-summary">
+
+                <h2>Your Order</h2>
+
+                <div id="checkoutItems" class="checkout-items">
+                    <p>Your selected meals will appear here.</p>
+                </div>
+
+                <hr>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <strong id="subtotal">₦0.00</strong>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery Fee</span>
+                    <strong>₦1,500.00</strong>
+                </div>
+
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <strong id="totalPrice">₦1,500.00</strong>
+                </div>
+
+                <button id="placeOrderBtn" class="btn btn-primary place-order-btn">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    Place Order
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+                ORDER CONFIRMATION MODAL
+    =========================================== -->
+
+    <div id="confirmationModal" class="modal">
+
+        <div class="modal-content">
+
+            <i class="fa-solid fa-circle-check success-icon"></i>
+
+            <h2>Order Placed Successfully!</h2>
+
+            <p>Thank you for choosing <strong>Bamboo Kitchen</strong>.</p>
+
+            <p>Your Order ID is:</p>
+
+            <h3 id="generatedOrderId">BK000001</h3>
+
+            <p>Keep this Order ID to track your order.</p>
+
+            <a href="track-order.html" id="trackOrderLink" class="btn btn-primary">
+                Track My Order
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+                    FOOTER
+    =========================================== -->
+
+    <footer id="contact" class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-column">
+                    <h3>Bamboo Kitchen</h3>
+                    <p>
+                        Bamboo Kitchen is committed to serving fresh,
+                        delicious meals prepared with quality ingredients
+                        and delivered with exceptional customer service.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <p>📞 +234 808 499 5639</p>
+                    <p>✉️ hello@bambookitchen.com</p>
+                    <p>📍 T-Junction Nike Lake Road, Enugu State, Nigeria</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Opening Hours</h3>
+                    <p>Monday – Friday: 8:00 AM – 9:00 PM</p>
+                    <p>Saturday: 9:00 AM – 10:00 PM</p>
+                    <p>Sunday: 10:00 AM – 8:00 PM</p>
+                </div>
+
+            </div>
+
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="X (Twitter)">X (Twitter)</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bamboo Kitchen. All Rights Reserved.</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ==========================================
+                    JAVASCRIPT
+    =========================================== -->
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
+
+    <script src="js/products.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/checkout.js"></script>
+
+</body>
+</html>

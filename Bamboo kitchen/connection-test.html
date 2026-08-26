@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Supabase Connection Test</title>
+
+    <style>
+
+        body{
+
+            font-family:Arial, Helvetica, sans-serif;
+
+            background:#f5f5f5;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            height:100vh;
+
+            margin:0;
+
+        }
+
+        .card{
+
+            background:#ffffff;
+
+            width:420px;
+
+            padding:40px;
+
+            border-radius:12px;
+
+            box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+            text-align:center;
+
+        }
+
+        h1{
+
+            margin-bottom:20px;
+
+        }
+
+        #status{
+
+            margin-top:20px;
+
+            font-size:20px;
+
+            font-weight:bold;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>Testing Supabase Connection</h1>
+
+        <p id="status">
+
+            Connecting...
+
+        </p>
+
+    </div>
+
+    <!-- ==========================
+         1. Supabase CDN
+    =========================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- ==========================
+         2. Supabase Config
+    =========================== -->
+
+    <script src="supabase-config.js"></script>
+
+    <!-- ==========================
+         3. Connection Test
+    =========================== -->
+
+    <script src="connection-test.js"></script>
+
+</body>
+
+</html>
